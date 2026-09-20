@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KPRIT | CSE AI-Cell Club</title>
+<meta name="description" content="KPRIT Department of CSE AI-Cell Club">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:1000;background:rgba(0,0,0,.94);border-bottom:1px solid #202020;backdrop-filter:blur(12px)}
+.header{width:94%;max-width:1400px;margin:auto;min-height:105px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{width:82px;height:82px;object-fit:contain}
+.ai-logo{border-radius:50%;filter:drop-shadow(0 0 12px #00bfff) drop-shadow(0 0 28px rgba(0,191,255,.35))}
+.title{text-align:center;flex:1}
+.title h1{font-size:28px;letter-spacing:2px;background:linear-gradient(90deg,#fff,#00d9ff,#7c5cff,#fff);background-size:300%;-webkit-background-clip:text;color:transparent;animation:gradient 6s linear infinite}
+.title p{color:#aaa;font-size:13px;letter-spacing:2px}
+nav{border-top:1px solid #151515}
+.nav{width:94%;max-width:1200px;margin:auto;display:flex;justify-content:center;flex-wrap:wrap}
+nav a{padding:14px 20px;color:#bbb;font-size:13px;font-weight:bold;letter-spacing:1px;transition:.3s}
+nav a:hover{color:#00d9ff}
+section{min-height:100vh;padding:100px 7%;position:relative;overflow:hidden}
+section:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:#00d9ff;filter:blur(170px);opacity:.06;left:-220px;top:25%;pointer-events:none}
+.hero{min-height:calc(100vh - 150px);display:flex;align-items:center;justify-content:center;text-align:center}
+.hero-content{max-width:950px;position:relative;z-index:2}
+.eyebrow{color:#00d9ff;letter-spacing:5px;font-size:13px;margin-bottom:20px}
+.hero h2{font-size:clamp(46px,8vw,90px);line-height:1;background:linear-gradient(90deg,#fff,#00d9ff,#7c5cff,#fff);background-size:300%;-webkit-background-clip:text;color:transparent;animation:gradient 6s linear infinite}
+.hero h3{font-size:25px;color:#ddd;margin:25px 0}
+.hero p{max-width:780px;margin:auto;color:#999;font-size:17px}
+.btns{margin-top:35px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.btn{padding:13px 27px;border-radius:30px;border:1px solid #00d9ff;font-weight:bold;transition:.3s}
+.primary{background:#00d9ff;color:#000}.secondary{color:#00d9ff}
+.btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,217,255,.2)}
+.heading{text-align:center;margin-bottom:55px}.heading h2{font-size:42px;letter-spacing:3px;background:linear-gradient(90deg,#00d9ff,#7c5cff);-webkit-background-clip:text;color:transparent}.heading p{color:#777;margin-top:8px}
+.grid2{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.card{padding:32px;border:1px solid #202020;border-radius:20px;background:linear-gradient(145deg,#111,#050505);transition:.35s}
+.card:hover{transform:translateY(-7px);border-color:#00d9ff;box-shadow:0 18px 45px rgba(0,217,255,.08)}
+.card h3{color:#00d9ff;margin-bottom:12px}.card p{color:#aaa}
+.advantages{max-width:1200px;margin:40px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.adv{padding:25px;text-align:center;border:1px solid #202020;border-radius:17px;background:#080808}.adv .icon{font-size:32px}.adv h4{margin:8px 0}.adv p{font-size:14px;color:#888}
+.team-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.person{padding:22px 15px;text-align:center;border:1px solid #202020;border-radius:20px;background:linear-gradient(145deg,#111,#050505);transition:.35s}
+.person:hover{transform:translateY(-8px);border-color:#00d9ff}
+.person img{width:155px;height:155px;border-radius:50%;object-fit:cover;margin:0 auto 18px;border:2px solid #00d9ff;padding:4px;box-shadow:0 0 25px rgba(0,217,255,.16)}
+.person h3{font-size:18px;margin-bottom:6px}.person p{font-size:12px;color:#00d9ff;font-weight:bold;text-transform:uppercase}
+.contact{max-width:900px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+.contact-card{text-align:center;padding:38px;border:1px solid #202020;border-radius:20px;background:#080808}.contact-card .icon{font-size:38px}.contact-card h3{color:#00d9ff}.contact-card p,.contact-card a{color:#aaa}
+.register{display:flex;align-items:center;justify-content:center;text-align:center}.register-box{max-width:820px;padding:65px 35px;border:1px solid #00d9ff;border-radius:28px;background:radial-gradient(circle,rgba(0,217,255,.1),transparent 65%);box-shadow:0 0 70px rgba(0,217,255,.07)}
+.register-box h2{font-size:44px}.register-box p{color:#999;max-width:650px;margin:15px auto 30px}.register-btn{display:inline-block;padding:15px 32px;border-radius:30px;background:linear-gradient(90deg,#00d9ff,#7c5cff);font-weight:bold}
+footer{text-align:center;padding:28px;border-top:1px solid #202020;color:#666;background:#030303}footer span{color:#00d9ff}
+@keyframes gradient{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
+@media(max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr)}.advantages{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.header{min-height:82px}.logo{width:55px;height:55px}.title h1{font-size:16px}.title p{font-size:8px;letter-spacing:1px}.nav{overflow-x:auto;justify-content:flex-start;flex-wrap:nowrap}nav a{white-space:nowrap;padding:12px 10px;font-size:11px}.grid2,.contact{grid-template-columns:1fr}.advantages,.team-grid{grid-template-columns:1fr}section{padding:80px 5%}.heading h2{font-size:31px}.hero h3{font-size:19px}.register-box h2{font-size:33px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header">
+    <img class="logo" src="images/college-logo.webp" alt="KPRIT College Logo">
+    <div class="title">
+      <h1>KPRIT</h1>
+      <p>DEPARTMENT OF COMPUTER SCIENCE &amp; ENGINEERING</p>
+      <p>AI-CELL CLUB</p>
+    </div>
+    <img class="logo ai-logo" src="images/ai-cell-logo.png" alt="KPRIT AI-Cell Logo">
+  </div>
+  <nav>
+    <div class="nav">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#core-team">Core Team</a>
+      <a href="#team">Team</a><a href="#contact">Contact</a><a href="#registration">Registration</a>
+    </div>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">KPRIT • CSE • AI-CELL</div>
+    <h2>AI-CELL</h2>
+    <h3>Department of Computer Science &amp; Engineering</h3>
+    <p>Welcome to the AI-Cell Club of KPRIT. A student-driven community dedicated to Artificial Intelligence, Machine Learning, innovation and emerging technologies.</p>
+    <div class="btns"><a class="btn primary" href="#about">Explore AI-Cell</a><a class="btn secondary" href="#registration">Join Us</a></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="heading"><h2>About AI-Cell</h2><p>Innovation • Artificial Intelligence • Collaboration</p></div>
+  <div class="grid2">
+    <div class="card"><h3>What is AI-Cell?</h3><p>AI-Cell is a student-focused technology club under the Department of Computer Science &amp; Engineering at KPRIT. It provides a platform to learn, experiment and collaborate in Artificial Intelligence, Machine Learning, Generative AI, Data Science, Robotics and emerging technologies.</p></div>
+    <div class="card"><h3>Our Vision</h3><p>To create a community of technically curious students who transform innovative ideas into practical AI-powered solutions through projects, workshops, hackathons and collaborative activities.</p></div>
+  </div>
+  <div class="heading" style="margin-top:70px"><h2>Advantages</h2></div>
+  <div class="advantages">
+    <div class="adv"><div class="icon">🤖</div><h4>AI Learning</h4><p>Learn AI and ML through practical activities.</p></div>
+    <div class="adv"><div class="icon">💡</div><h4>Innovation</h4><p>Turn creative ideas into technology projects.</p></div>
+    <div class="adv"><div class="icon">🚀</div><h4>Career Growth</h4><p>Build skills for internships and placements.</p></div>
+    <div class="adv"><div class="icon">🧠</div><h4>Skill Development</h4><p>Improve programming and problem solving.</p></div>
+    <div class="adv"><div class="icon">🤝</div><h4>Collaboration</h4><p>Work with students and faculty.</p></div>
+    <div class="adv"><div class="icon">🏆</div><h4>Hackathons</h4><p>Participate in technical events and competitions.</p></div>
+  </div>
+</section>
+
+<section id="core-team">
+  <div class="heading"><h2>Core Team</h2><p>Leadership &amp; Academic Guidance</p></div>
+  <div class="team-grid">
+    <div class="person"><img src="images/hod.jpeg" alt="CSE HOD"><h3>Dr.K. Vamshee Krishna</h3><p>Head of Department</p></div>
+    <div class="person"><img src="images/director.jpeg" alt="KPRES Director"><h3>Prof.C D Naidu</h3><p>KPRES Director</p></div>
+    <div class="person"><img src="images/vice-principal.jpeg" alt="Vice Principal"><h3>Mrs. Vishwasree</h3><p>Vice Principal</p></div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="heading"><h2>AI-Cell Team</h2><p>Students Building the Future</p></div>
+  <div class="team-grid">
+    <div class="person"><img src="images/president.jpeg" alt="President"><h3>G.V. Deepesh</h3><p>President</p></div>
+    
+  </div>
+  
+</section>
+
+<section id="contact">
+  <div class="heading"><h2>Contact</h2><p>Get in touch with AI-Cell</p></div>
+  <div class="contact">
+    <div class="contact-card"><div class="icon">📞</div><h3>Phone</h3><p><a href="tel:+91 7780161147">+91 7780161147</a></p></div>
+    <div class="contact-card"><div class="icon">📧</div><h3>Email</h3><p><a href="mailto:aicell@kprit.ac.in">aicell@kprit.ac.in</a></p></div>
+  </div>
+</section>
+
+<section id="registration" class="register">
+  <div class="register-box">
+    <h2>Join AI-Cell</h2>
+    <p>Interested in Artificial Intelligence, Machine Learning, innovation and emerging technologies? Join the KPRIT CSE AI-Cell community.</p>
+    <a class="register-btn" href="https://forms.gle/UAM3CokLZaWiWsfm8" target="_blank">REGISTER NOW →</a>
+  </div>
+</section>
+
+<footer>© 2026 <span>KPRIT Department of CSE AI-Cell Club</span> · All Rights Reserved.</footer>
+</body>
+</html>
